@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 12px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+li {
+  list-style: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a {
+  text-decoration: none;
+  color: black;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:visited {
+  color: black;
+}
+button {
+  border: 0;
+  background-color: #ffffff;
 }
 
-.App-link {
-  color: #61dafb;
+button:active {
+  background-color: grey;
+  outline: none;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  cursor: pointer;
+}
+
+body {
+  margin: 0;
+  width: 100%;
+  font-family: "Inter", sans-serif;
+}
+
+.btn {
+  padding: 0.25rem 1.5rem;
+  cursor: pointer;
+  margin: 0.25rem 1rem;
+  font-weight: 700;
+  border-radius: 2px;
+}
+
+.btn-primary {
+  background-color: #0074d9;
+  color: #fff;
+}
+
+.container {
+}
+
+.map-container {
+  position: fixed;
+  inset: 0;
+}
+
+.charts-container {
+  z-index: 999;
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: 400px auto 400px;
+  grid-template-rows: 300px auto 300px; 
+}
+
+.charts-container .chart:nth-child(even) {
+  grid-column: 3 / 4;
+}
+
+.charts-container .chart:nth-child(odd) {
+  grid-column: 1 / 2;
+}
+
+.controls {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.chart {
+  padding: 0.5rem;  
+}
+
+.chart-heading { 
+  font-weight: 700;
 }
