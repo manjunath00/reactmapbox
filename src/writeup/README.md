@@ -12,7 +12,7 @@
 I started off with converting all csv data to json using script in "data/extractData".
 I only parsed 10000 items as it not possible to import all 40000 items in CRA in my pc.
 I then imported the json file to js file. Then I exported the data.
-I was not able to understand how to do first 2 two points on the outcome section
+I was not able to understand how to do first 2 two points on the outcome section.
 This data was then passed to App component.
 Here the data as array was sliced in the length of 100 items as an array.
 I was not able to plot all the data in one shot because it takes too much time in my computer.
