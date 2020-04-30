@@ -1,24 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+
+import ridesData from "./data";
+import Mapbox from "./components/mapbox";
+import Pagination from "./components/Pagination";
+import UserStories from "./components/charts";
 
 function App() {
+  const [startIndex, setStartIndex] = useState(0);
+  const [endIndex, setEndIndex] = useState(100);
+  const [rides, setRides] = useState(ridesData.slice(0, 100));
+  const totalRides = ridesData.length;
+
+  useEffect(() => {
+    setRides(ridesData.slice(startIndex, endIndex));
+  }, [startIndex, endIndex]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Mapbox rides={rides} />
+      <Pagination
+        startIndex={startIndex}
+        setStartIndex={setStartIndex}
+        endIndex={endIndex}
+        setEndIndex={setEndIndex}
+        totalRides={totalRides}
+      />
+      <UserStories rides={rides} />
     </div>
   );
 }
